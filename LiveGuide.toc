@@ -1,0 +1,39 @@
+## Interface: 11302
+## Title: LiveGuide
+## Notes: A leveling addon to follow the ClassicWoW.live guides
+## Author: Rawrschach
+## Version: 0.1
+## SavedVariables: LiveGuideDB
+## OptionalDeps: TomTom
+
+embeds.xml
+
+Set.lua
+LiveGuide.lua
+Actions.lua
+AutoCompleteController.lua
+AutoProgressController.lua
+SummaryText.lua
+Config.lua
+Assets.lua
+Styles.lua
+Widgets\Text.lua
+Widgets\CloseButton.lua
+Widgets\Container.lua
+Widgets\ActionIcon.lua
+Widgets\ActionText.lua
+Widgets\NotesText.lua
+Widgets\ObjectiveText.lua
+Widgets\QuestText.lua
+Widgets\MapPinPool.lua
+Widgets\TargetText.lua
+Widgets\Directions.lua
+Widgets\Handle.lua
+Widgets\Header.lua
+Widgets\LockButton.lua
+Widgets\Logo.lua
+Widgets\Stepper.lua
+MapController.lua
+ArrowController.lua
+
+Guides\Guides.xml

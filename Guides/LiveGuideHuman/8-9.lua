@@ -1,0 +1,55 @@
+local raceEn = select(1, UnitRace("player"))
+local classEn = select(1, UnitClass("player"))
+if raceEn:gsub("%s+", ""):lower() == "human" then
+    LiveGuide.registerLevel({
+        guide = "LiveGuideHuman",
+        race = "human",
+        title = "8-9",
+        level = 8,
+        nextLevel = 9,
+        steps = function()
+            return {
+                { action = 36, questName = "at Goldshire", x = 0.395, y = 0.605, mapId = 1429, npcName = "Spirit Healer", },
+                { action = 43, questName = "", x = 0.417, y = 0.658, mapId = 1429, npcName = "Andrew Krighton", },
+                { class = "M", action = 40, questName = "", x = 0.432, y = 0.662, mapId = 1429, npcName = "Zaldimar Wefhellt", },
+                { class = "Pa", action = 40, questName = "", x = 0.411, y = 0.660, mapId = 1429, npcName = "Brother Wilhelm", },
+                { class = "Pr", action = 40, questName = "", x = 0.433, y = 0.657, mapId = 1429, npcName = "Priestess Josetta", },
+                { class = "R", action = 40, questName = "", x = 0.439, y = 0.659, mapId = 1429, npcName = "Keryn Sylvius", },
+                { class = "L", action = 40, questName = "", x = 0.444, y = 0.662, mapId = 1429, npcName = "Maximillian Crowe", },
+                { class = "L", action = 40, questName = "Pet", x = 0.444, y = 0.660, mapId = 1429, npcName = "Cylina Darkheart", },
+                { class = "W", action = 40, questName = "", x = 0.411, y = 0.658, mapId = 1429, npcName = "Lyria Du Lac", },
+                { action = 40, questName = "Cooking", x = 0.444, y = 0.660, mapId = 1429, npcName = "Tomas", notes = "10 Cooking skill is needed to pick up a quest in Darkshore.", },
+                { action = 25, questName = "[Chunk of Boar Meat]", x = 0.580, y = 0.730, mapId = 1429, npcName = "", notes = "Needed to reach 10 Cooking skill for quest later.", },
+                { action = 20, questName = "Further Concerns", x = 0.740, y = 0.722, mapId = 1429, npcName = "Guard Thomas", questId = 35, },
+                { action = 26, questName = "Find the Lost Guards", x = 0.740, y = 0.722, mapId = 1429, npcName = "Guard Thomas", questId = 37, },
+                { action = 26, questName = "Protect the Frontier", x = 0.740, y = 0.722, mapId = 1429, npcName = "Guard Thomas", questId = 52, },
+                { action = 29, questName = "Protect the Frontier", x = 0.730, y = 0.620, mapId = 1429, npcName = "", questId = 52, },
+                { action = 25, questName = "[Stringy Wolf Meat]", x = 0.730, y = 0.620, mapId = 1429, npcName = "", notes = "Needed to reach 10 Cooking skill for quest later.", },
+                { action = 20, questName = "Find the Lost Guards", x = 0.727, y = 0.603, mapId = 1429, npcName = "<A half-eaten body>", questId = 37, notes = "R.I.P.", },
+                { action = 26, questName = "Discover Rolf's Fate", x = 0.727, y = 0.603, mapId = 1429, npcName = "<A half-eaten body>", questId = 45, },
+                { action = 20, questName = "Discover Rolf's Fate", x = 0.798, y = 0.555, mapId = 1429, npcName = "<Rolf's corpse>", questId = 45, },
+                { action = 26, questName = "Report to Thomas", x = 0.798, y = 0.555, mapId = 1429, npcName = "<Rolf's corpse>", questId = 71, },
+                { action = 29, questName = "Protect the Frontier", x = 0.790, y = 0.610, mapId = 1429, npcName = "", questId = 52, },
+                { action = 43, questName = "", x = 0.833, y = 0.661, mapId = 1429, npcName = "Rallic Finn", },
+                { action = 26, questName = "A Bundle of Trouble", x = 0.814, y = 0.661, mapId = 1429, npcName = "Supervisor Raelen", questId = 5545, },
+                { action = 8, questName = "A Bundle of Trouble", x = 0.830, y = 0.600, mapId = 1429, npcName = "<Bundle of Wood>", questId = 5545, },
+                { action = 8, questName = "Protect the Frontier", x = 0.830, y = 0.600, mapId = 1429, npcName = "", questId = 52, },
+                { action = 20, questName = "A Bundle of Trouble", x = 0.814, y = 0.661, mapId = 1429, npcName = "Supervisor Raelen", questId = 5545, },
+                { action = 27, questName = "Red Linen Goods", x = 0.795, y = 0.688, mapId = 1429, npcName = "Sara Timberlain", questId = 83, },
+                { action = 9, questName = "", x = 0.792, y = 0.691, mapId = 1429, npcName = ">Cozy Fire<", },
+                { class = "MPrL", action = 40, questName = "Tailoring", x = 0.792, y = 0.691, mapId = 1429, npcName = "Eldrin", },
+                { class = "MPrL", action = 52, questName = "[Bolt of Linen Cloth]", npcName = "", notes = "To 30 Tailoring. If you don't have enough linen it's still possible to complete the wand if you have other green items to disenchant instead.", },
+                { class = "MPrL", action = 32, questName = "[Bolt of Linen Cloth]", npcName = "", notes = "To craft your wand in SW.", amount = "all", },
+                { action = 20, questName = "Protect the Frontier", x = 0.740, y = 0.722, mapId = 1429, npcName = "Guard Thomas", questId = 52, },
+                { action = 20, questName = "Report to Thomas", x = 0.740, y = 0.722, mapId = 1429, npcName = "Guard Thomas", questId = 71, },
+                { action = 26, questName = "Deliver Thomas' Report", x = 0.740, y = 0.722, mapId = 1429, npcName = "Guard Thomas", questId = 39, },
+                { action = 8, questName = "Princess Must Die!", x = 0.700, y = 0.790, mapId = 1429, npcName = "Princess", questId = 88, },
+                { class = "DHMPaPrRW", action = 8, questName = "Red Linen Goods", x = 0.710, y = 0.790, mapId = 1429, npcName = "", questId = 83, },
+                { class = "L", action = 29, questName = "Red Linen Goods", x = 0.710, y = 0.790, mapId = 1429, npcName = "", questId = 83, },
+                { class = "L", action = 22, questName = "to Goldshire", x = 0.710, y = 0.790, mapId = 1429, npcName = "", },
+                { class = "DHMPaPrRW", action = 20, questName = "Red Linen Goods", x = 0.795, y = 0.688, mapId = 1429, npcName = "Sara Timberlain", questId = 83, },
+                { class = "DHMPaPrRW", action = 1000, questName = "", npcName = "", },
+            }
+        end
+    })
+end
