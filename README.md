@@ -1,7 +1,7 @@
 # LiveGuide
 1-60 Classic In-Game Leveling Guide
 
-Credits: @rawrschachwow and ClassicWoW.live
+Credits: [@rawrschachwow](https://github.com/rawrschachwow) and [ClassicWoW.live](https://classicwow.live)
 
 ![image](https://user-images.githubusercontent.com/138880/229316078-89f23b03-a973-40a7-b2c2-f4dd3e6a01ba.png)
 
