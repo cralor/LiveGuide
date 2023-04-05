@@ -161,12 +161,15 @@ function LiveGuide.showExtra(showExtra)
         Stepper.show()
         LockButton.show()
         CloseButton.show()
+        LiveGuide.container:SetBackdrop(Container.Styles.Backdrop)
+        LiveGuide.container.updateOpacity()
     else
         Logo.hide()
         Header.hide()
         Stepper.hide()
         LockButton.hide()
         CloseButton.hide()
+        LiveGuide.container:SetBackdrop(nil)
     end
 end
 
