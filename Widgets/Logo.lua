@@ -33,5 +33,13 @@ function Logo.create()
         end
     end)
 
+    function Logo.hide()
+        f:Hide()
+    end
+
+    function Logo.show()
+        f:Show()
+    end
+
     return f;
 end

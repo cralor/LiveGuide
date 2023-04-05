@@ -1,8 +1,8 @@
-## Interface: 11302
+## Interface: 11403
 ## Title: LiveGuide
 ## Notes: A leveling addon to follow the ClassicWoW.live guides
-## Author: Rawrschach
-## Version: 0.1
+## Author: Rawrschach, cralor
+## Version: 0.2
 ## SavedVariables: LiveGuideDB
 ## OptionalDeps: TomTom
 

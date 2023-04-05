@@ -36,5 +36,13 @@ function Header.create()
     f.resize()
     f:SetPoint("TOP", 0, -5)
 
+    function Header.hide()
+        f:Hide()
+    end
+
+    function Header.show()
+        f:Show()
+    end
+
     return f;
 end

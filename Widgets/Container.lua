@@ -28,10 +28,13 @@ function Container.create()
     f.layout = function()
         local minHeight = f.minHeight()
 
-        if f:GetHeight() < minHeight then
-            LiveGuide.updateHeight(minHeight)
-            f:SetPoint("TOPLEFT", LiveGuide.db.profile.x, LiveGuide.db.profile.y)
-        end
+        -- if f:GetHeight() < minHeight then
+        --     LiveGuide.updateHeight(minHeight)
+        --     f:SetPoint("TOPLEFT", LiveGuide.db.profile.x, LiveGuide.db.profile.y)
+        -- end
+
+        LiveGuide.updateHeight(minHeight)
+        f:SetPoint("TOPLEFT", UIParent, LiveGuide.db.profile.x, LiveGuide.db.profile.y)
 
         LiveGuide.container:SetMinResize(LiveGuide.minResize, minHeight)
 

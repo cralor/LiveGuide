@@ -49,5 +49,13 @@ function LockButton.create()
         end
     end)
 
+    function LockButton.hide()
+        f:Hide()
+    end
+
+    function LockButton.show()
+        f:Show()
+    end
+
     return f;
 end

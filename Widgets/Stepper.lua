@@ -29,6 +29,14 @@ function Stepper.create()
     f:SetBackdropColor(unpack(Stepper.Styles.BackdropColor))
     f:SetPoint("BOTTOM", 0, 18)
 
+    function Stepper.hide()
+        f:Hide()
+    end
+
+    function Stepper.show()
+        f:Show()
+    end
+
     return f;
 end
 

@@ -9,6 +9,8 @@ function LiveGuide.createDefaultOptions()
             y = -135,
             show = true,
             locked = false,
+            hardMode = false,
+            declutterMode = false,
             opacity = 0.75,
             tomtomEnabled = true,
             debug = false,
@@ -117,8 +119,22 @@ local function createQuestingOptionsTable()
                 name="\n", 
                 order = 2,
             },
-            autoProgress = {
+            hardMode = {
                 order = 3,
+                type = "toggle",
+                name = "Hardmode Enabled",
+                desc = "When this option is enabled, the guide will avoid suggesting Death Skips.",
+                width = "full",
+                set = function(_, hardmode)
+                    LiveGuide.updateHardMode(hardmode)
+                    LiveGuide.updateActiveSteps()
+                end,
+                get = function(_)
+                    return LiveGuide.db.profile.hardMode
+                end
+            },
+            autoProgress = {
+                order = 4,
                 type = "toggle",
                 name = "Automatically Progress Steps",
                 desc = "When this option is enabled, the guide will attempt to move from one step to the next as you complete the objective of each step, without the need to manually click the \"Next Step\" arrow.",
@@ -132,7 +148,7 @@ local function createQuestingOptionsTable()
                 end
             },
             autoAccept = {
-                order = 4,
+                order = 5,
                 type = "toggle",
                 name = "Automatically Accept Quests",
                 desc = "Only accepts the quest from the current step when you talk to the appropriate npc",
@@ -145,7 +161,7 @@ local function createQuestingOptionsTable()
                 end
             },
             autoComplete = {
-                order = 5,
+                order = 6,
                 type = "toggle",
                 name = "Automatically Complete Quests",
                 desc = "Only completes the quest from the current step when you talk to the appropriate npc",
@@ -160,7 +176,7 @@ local function createQuestingOptionsTable()
             autoCompleteDescription = {
                 type="description", 
                 name="Note: Other addons also offer the ability to automatically accept quests, but they tend to accept all quest a questgiver has to offer, instead of the quests recommended by this guide. To ensure you only accept the quests recommended by the guide at the appropriate time, it's best to disable the auto accept features of other addons, such as Questie, ClassicCodex, and LeatrixPlus.", 
-                order = 6,
+                order = 7,
             },
         }
     }
@@ -290,6 +306,19 @@ local function createGeneralOptionsTable()
                 end,
                 get = function(_)
                     return LiveGuide.db.profile.locked
+                end
+            },
+            declutter = {
+                order = 4,
+                type = "toggle",
+                name = "Declutter Mode",
+                desc = "Hides much of the guide UI until mouseover",
+                width = "full",
+                set = function(_, declutter)
+                    LiveGuide.updateDeclutterMode(declutter)
+                end,
+                get = function(_)
+                    return LiveGuide.db.profile.declutterMode
                 end
             },
             fontSize = {

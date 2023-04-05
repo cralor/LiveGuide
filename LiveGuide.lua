@@ -40,6 +40,10 @@ function LiveGuide:OnEnable()
 
     if LiveGuide.db.profile.show then
         LiveGuide.container:Show()
+
+        if LiveGuide.db.profile.declutterMode then
+            LiveGuide.updateDeclutterMode(LiveGuide.db.profile.declutterMode)
+        end
     else
         LiveGuide.container:Hide()
     end
@@ -90,6 +94,10 @@ local stepIsAKeeper = function(step)
         end
     end
 
+    if LiveGuide.db.profile.hardMode and step.action == LiveGuide.actions.die or step.action == LiveGuide.actions.spiritRez then
+        keeper = false
+    end
+
     return keeper
 end
 
@@ -117,6 +125,49 @@ function LiveGuide.updateLock(locked)
     LiveGuide.container.lockButton.updateLock()
     LiveGuide.container.bottomLeftResizeHandle.updateLock()
     LiveGuide.container.bottomRightResizeHandle.updateLock()
+end
+
+function LiveGuide.updateHardMode(hardmode)
+    LiveGuide.db.profile.hardMode = hardmode
+end
+
+function LiveGuide.updateDeclutterMode(declutter)
+    LiveGuide.db.profile.declutterMode = declutter
+    LiveGuide.showExtra(not declutter)
+
+    if declutter then
+        LiveGuide.container:SetScript("OnEnter", function()
+            LiveGuide.showExtra(true)
+            LiveGuide.TimeSinceLastUpdate = 0
+            LiveGuide.container:SetScript("OnUpdate", function(self, elapsed)
+                LiveGuide.TimeSinceLastUpdate = LiveGuide.TimeSinceLastUpdate + elapsed; 	
+
+                if (LiveGuide.TimeSinceLastUpdate > 3.0) then
+                    LiveGuide.showExtra(false)
+                    LiveGuide.container:SetScript("OnUpdate", nil)
+                    LiveGuide.TimeSinceLastUpdate = 0;
+                end
+            end)
+        end)
+    else
+        LiveGuide.container:SetScript("OnEnter", nil)
+    end
+end
+
+function LiveGuide.showExtra(showExtra)
+    if showExtra then
+        Logo.show()
+        Header.show()
+        Stepper.show()
+        LockButton.show()
+        CloseButton.show()
+    else
+        Logo.hide()
+        Header.hide()
+        Stepper.hide()
+        LockButton.hide()
+        CloseButton.hide()
+    end
 end
 
 function LiveGuide.updateOpacity(opacity)

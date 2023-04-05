@@ -36,5 +36,13 @@ function CloseButton.create()
         end
     end)
 
+    function CloseButton.hide()
+        f:Hide()
+    end
+
+    function CloseButton.show()
+        f:Show()
+    end
+
     return f;
 end
